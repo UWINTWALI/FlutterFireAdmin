@@ -1,50 +1,38 @@
 import 'package:flutter/material.dart';
-import 'employee.dart';
+import '../auth/auth_service.dart';
+import 'profile_page.dart';
 
-class Home extends StatefulWidget {
+class Home extends StatelessWidget {
   const Home({super.key});
 
-  @override
-  State<Home> createState() => _HomeState();
-}
+  void _logout(BuildContext context) async {
+    await AuthService().signOut();
+    Navigator.pushReplacementNamed(context, '/login');
+  }
 
-class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Employee()),
-          );
-        },
-        child: Icon(Icons.add),
-      ),
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center, //center the title
-          children: [
-            Text(
-              "Flutter",
-              style: TextStyle(
-                color: Colors.blue,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              "Firebase",
-              style: TextStyle(
-                color: Colors.orange,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
+        title: const Text("Home"),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () => _logout(context),
+          ),
+        ],
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text("View Profile"),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const ProfilePage()),
+            );
+          },
         ),
       ),
-      // body: Container(child: Column(children: [])),
     );
   }
 }

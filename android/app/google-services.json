@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "893864573731",
+    "firebase_url": "https://flutterfireadmin-default-rtdb.firebaseio.com",
+    "project_id": "flutterfireadmin",
+    "storage_bucket": "flutterfireadmin.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893864573731:android:ed8e3c8856c0c10b03aa96",
+        "android_client_info": {
+          "package_name": "com.example.crud_notification"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkgUM7kmLj_snyjKGOjrob62adnyWefEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
